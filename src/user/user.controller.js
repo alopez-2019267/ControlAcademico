@@ -115,8 +115,19 @@ export const update = async(req, res) => {//Sirve para datos generales, menos co
     try{
         //Obtener el id del usuario para actualizar
         let { id } = req.params
+        const { userId } = req.body; // Suponiendo que el ID del usuario se envía en el cuerpo de la solicitud
         //obtener los datos a actualizar
         let data = req.body
+        const perfil = await User.findOne({ _id: id });
+
+        if (!perfil) {
+            return res.status(404).send({ message: 'Profile not found' });
+        }
+
+        // Verificar si el usuario tiene permiso para eliminar la publicación
+        if (perfil._id.toString() !== userId) {
+            return res.status(403).send({ message: 'You are not authorized to update this user profile' });
+        }
         //validar que data no este vacío
         let update = checkUpdate(data, id)
         if(!update) return res.status(400).send({message: `Have submitted some data that cannot be updated`})
@@ -143,7 +154,20 @@ export const deleteUser = async(req, res)=>{
     try{
         //Obtener el Id
         let { id } = req.params
-        //validar si esta logeado y es el mismo
+        const { userId } = req.body; // Suponiendo que el ID del usuario se envía en el cuerpo de la solicitud
+
+        // Buscar la publicación por su ID
+        const perfil = await User.findOne({ _id: id });
+
+        if (!perfil) {
+            return res.status(404).send({ message: 'Profile not found' });
+        }
+
+        // Verificar si el usuario tiene permiso para eliminar la publicación
+        if (perfil._id.toString() !== userId) {
+            return res.status(403).send({ message: 'You are not authorized to delete this user profile' });
+        }
+
         //Eliminamos (deleteOne(solo elimina), findeOneAndDelete(me devuelve el documento eliminado))
         let deletedUser = await User.findOneAndDelete({_id: id})
         //Verificamos que se elimino

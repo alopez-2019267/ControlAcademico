@@ -1,0 +1,462 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "ControlAcademico",
+    "dateExported": "2024-03-04T00:25:29.149Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "d2015c1e-dc2c-4174-aca8-6ba777e722f9",
+            "name": "Register y Login",
+            "containerId": "",
+            "created": "2024-03-03T21:17:24.516Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "647a47eb-a7f1-489c-8e89-86c4a45bc0a0",
+            "name": "User(Student)",
+            "containerId": "",
+            "created": "2024-03-03T21:17:24.517Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "37002686-fb52-44a5-8383-6a379f2c18a4",
+            "name": "Cursos",
+            "containerId": "",
+            "created": "2024-03-03T21:17:24.518Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "1520b830-9b98-455c-bd37-12381c355b2f",
+            "name": "Assing",
+            "containerId": "",
+            "created": "2024-03-03T21:17:24.519Z",
+            "sortNum": 70000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "79484d9a-fbd1-48e1-851c-a6b38588078a",
+            "colId": "90dec943-1779-4d94-819b-39888bb431c9",
+            "containerId": "d2015c1e-dc2c-4174-aca8-6ba777e722f9",
+            "name": "RegistrarEstudiante",
+            "url": "/user/registerStudent",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-03T21:17:24.516Z",
+            "modified": "2024-03-03T23:54:27.453Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Antony"
+                    },
+                    {
+                        "name": "surname",
+                        "value": "Doren"
+                    },
+                    {
+                        "name": "username",
+                        "value": "adoren"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12345678"
+                    },
+                    {
+                        "name": "email",
+                        "value": "adoren@gmail.com"
+                    },
+                    {
+                        "name": "phone",
+                        "value": "12345678"
+                    },
+                    {
+                        "name": "role",
+                        "value": "afsaf"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "213bd510-d72d-4eb8-880a-8232929db97d",
+            "colId": "90dec943-1779-4d94-819b-39888bb431c9",
+            "containerId": "d2015c1e-dc2c-4174-aca8-6ba777e722f9",
+            "name": "Login",
+            "url": "/user/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-03-03T21:17:24.517Z",
+            "modified": "2024-03-04T00:02:03.274Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "adoren"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12345678"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "3665eaf9-a6c3-4564-9ab3-e1e28397c719",
+            "colId": "90dec943-1779-4d94-819b-39888bb431c9",
+            "containerId": "d2015c1e-dc2c-4174-aca8-6ba777e722f9",
+            "name": "Login(Para entrar como Admin Maestro)",
+            "url": "/user/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-03-03T21:17:24.518Z",
+            "modified": "2024-03-03T21:17:24.518Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "admin"
+                    },
+                    {
+                        "name": "password",
+                        "value": "admin123"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "323ce296-8dac-44b1-8538-fedb3f5131f4",
+            "colId": "90dec943-1779-4d94-819b-39888bb431c9",
+            "containerId": "d2015c1e-dc2c-4174-aca8-6ba777e722f9",
+            "name": "RegistrarMaestro(Es un Update hecho por un admin para convertir un usuario a Admin)",
+            "url": "/user/registerTeacher/65e4e945c41de6908eaa41db",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-03-03T21:17:24.519Z",
+            "modified": "2024-03-03T21:20:46.124Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU0ZTkyM2M0MWRlNjkwOGVhYTQxZDgiLCJ1c2VybmFtZSI6ImFkbWluIiwibmFtZSI6ImFkbWluIiwicm9sZSI6IlRFQUNIRVJfUk9MRSIsImlhdCI6MTcwOTUwMDgyOCwiZXhwIjoxNzA5NTExNjI4fQ.ZmlH7sg-ZCw6V6LiFU0DdmzkqRQfuvcSOaoAGRcEsiI"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "role",
+                        "value": "TEACHER_ROLE"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "77387154-d091-4ab3-bcc6-7f35e4e3c95e",
+            "colId": "90dec943-1779-4d94-819b-39888bb431c9",
+            "containerId": "647a47eb-a7f1-489c-8e89-86c4a45bc0a0",
+            "name": "Update",
+            "url": "/user/update/65e50daf4acded1970a239a6",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-03-03T21:17:24.520Z",
+            "modified": "2024-03-03T23:56:34.026Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU1MGRhZjRhY2RlZDE5NzBhMjM5YTYiLCJ1c2VybmFtZSI6ImFwZWRybyIsIm5hbWUiOiJBbnRvbnkiLCJyb2xlIjoiU1RVREVOVF9ST0xFIiwiaWF0IjoxNzA5NTEwMTM3LCJleHAiOjE3MDk1MjA5Mzd9.IVTj1OwcVNswnVm_i78GkJNxN-W-kNOabyvNWXtfjXg"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Pedro"
+                    },
+                    {
+                        "name": "surname",
+                        "value": "Ramirez"
+                    },
+                    {
+                        "name": "username",
+                        "value": "pramirez"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12345677",
+                        "isDisabled": true
+                    },
+                    {
+                        "name": "email",
+                        "value": "pramirez@gmail.com"
+                    },
+                    {
+                        "name": "phone",
+                        "value": "12345678"
+                    },
+                    {
+                        "name": "role",
+                        "value": "asfasf",
+                        "isDisabled": true
+                    },
+                    {
+                        "name": "userId",
+                        "value": "65e50daf4acded1970a239a6"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "ca4dc14b-2f76-4f94-b5ee-48343015e2a8",
+            "colId": "90dec943-1779-4d94-819b-39888bb431c9",
+            "containerId": "647a47eb-a7f1-489c-8e89-86c4a45bc0a0",
+            "name": "Elimar perfil",
+            "url": "/user/delete/65e4ec05ea8b3f1094db0367",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-03-03T21:17:24.521Z",
+            "modified": "2024-03-03T23:53:57.162Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU0ZWMwNWVhOGIzZjEwOTRkYjAzNjciLCJ1c2VybmFtZSI6ImFwZWRybyIsIm5hbWUiOiJBbnRvbnkiLCJyb2xlIjoiU1RVREVOVF9ST0xFIiwiaWF0IjoxNzA5NTA5ODYwLCJleHAiOjE3MDk1MjA2NjB9.9xXSd_18NSy1uPRhI9q2OoY5_j9ySj4cbg89ffGiD50"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "userId",
+                        "value": "65e4ec05ea8b3f1094db0367"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "4e869570-1447-4809-a94b-ad857e3c0b13",
+            "colId": "90dec943-1779-4d94-819b-39888bb431c9",
+            "containerId": "37002686-fb52-44a5-8383-6a379f2c18a4",
+            "name": "Crear Curso",
+            "url": "/course/crearCurso",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-03-03T21:17:24.522Z",
+            "modified": "2024-03-04T00:07:42.679Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU0ZTk0NWM0MWRlNjkwOGVhYTQxZGIiLCJ1c2VybmFtZSI6ImFkb3JlbiIsIm5hbWUiOiJBbnRvbnkiLCJyb2xlIjoiVEVBQ0hFUl9ST0xFIiwiaWF0IjoxNzA5NTAwODY2LCJleHAiOjE3MDk1MTE2NjZ9.rszNBQb2GjmSxcuuqpl9Rpg54yDgSZNLKAA2OFgqD-8"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Matematicas"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Clase de matematicas y ciencias exactas"
+                    },
+                    {
+                        "name": "teacher",
+                        "value": "65e4e945c41de6908eaa41db"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "776b2fbc-c016-4cee-bf92-537df94dd7f6",
+            "colId": "90dec943-1779-4d94-819b-39888bb431c9",
+            "containerId": "37002686-fb52-44a5-8383-6a379f2c18a4",
+            "name": "Editar Curso",
+            "url": "/course/editarCurso/65e5124b531e5e2c0bac76f7",
+            "method": "PUT",
+            "sortNum": 80000,
+            "created": "2024-03-03T21:17:24.523Z",
+            "modified": "2024-03-04T00:22:39.347Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU0ZTk0NWM0MWRlNjkwOGVhYTQxZGIiLCJ1c2VybmFtZSI6ImFkb3JlbiIsIm5hbWUiOiJBbnRvbnkiLCJyb2xlIjoiVEVBQ0hFUl9ST0xFIiwiaWF0IjoxNzA5NTEwNzA3LCJleHAiOjE3MDk1MjE1MDd9.9IeKBnVAtMsDT-TZKLQHevoZX3K963_EG-PkAng64X0"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Lenguaje"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Clase de linguistica"
+                    },
+                    {
+                        "name": "teacher",
+                        "value": "65e4e945c41de6908eaa41db"
+                    },
+                    {
+                        "name": "userId",
+                        "value": "65e4e945c41de6908eaa41db"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "3d4cba73-3dcb-40f4-b736-1cad4b6108c2",
+            "colId": "90dec943-1779-4d94-819b-39888bb431c9",
+            "containerId": "37002686-fb52-44a5-8383-6a379f2c18a4",
+            "name": "Eliminar Curso",
+            "url": "/course/deleteCourse/65e51227531e5e2c0bac76ea",
+            "method": "DELETE",
+            "sortNum": 90000,
+            "created": "2024-03-03T21:17:24.524Z",
+            "modified": "2024-03-04T00:13:59.976Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU0ZTk0NWM0MWRlNjkwOGVhYTQxZGIiLCJ1c2VybmFtZSI6ImFkb3JlbiIsIm5hbWUiOiJBbnRvbnkiLCJyb2xlIjoiVEVBQ0hFUl9ST0xFIiwiaWF0IjoxNzA5NTEwNzA3LCJleHAiOjE3MDk1MjE1MDd9.9IeKBnVAtMsDT-TZKLQHevoZX3K963_EG-PkAng64X0"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "userId",
+                        "value": "65e4e945c41de6908eaa41db"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "58c741cd-7a0c-4b45-8588-5f5b93aadfdb",
+            "colId": "90dec943-1779-4d94-819b-39888bb431c9",
+            "containerId": "37002686-fb52-44a5-8383-6a379f2c18a4",
+            "name": "Buscar Cursos (A los que el profesor este asignado)",
+            "url": "/course/searchCourse",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2024-03-03T21:17:24.525Z",
+            "modified": "2024-03-03T21:36:18.107Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU0ZTk0NWM0MWRlNjkwOGVhYTQxZGIiLCJ1c2VybmFtZSI6ImFkb3JlbiIsIm5hbWUiOiJBbnRvbnkiLCJyb2xlIjoiVEVBQ0hFUl9ST0xFIiwiaWF0IjoxNzA5NTAwODY2LCJleHAiOjE3MDk1MTE2NjZ9.rszNBQb2GjmSxcuuqpl9Rpg54yDgSZNLKAA2OFgqD-8"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "search",
+                        "value": "65e4e945c41de6908eaa41db"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "9767fb2e-37ab-4546-9a39-d5f819b7cd31",
+            "colId": "90dec943-1779-4d94-819b-39888bb431c9",
+            "containerId": "1520b830-9b98-455c-bd37-12381c355b2f",
+            "name": "Asignarse a un curso",
+            "url": "/assing/assingCourse",
+            "method": "POST",
+            "sortNum": 120000,
+            "created": "2024-03-03T21:17:24.526Z",
+            "modified": "2024-03-03T22:43:41.510Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU0ZWMwNWVhOGIzZjEwOTRkYjAzNjciLCJ1c2VybmFtZSI6ImFwZWRybyIsIm5hbWUiOiJBbnRvbnkiLCJyb2xlIjoiU1RVREVOVF9ST0xFIiwiaWF0IjoxNzA5NTAyOTkxLCJleHAiOjE3MDk1MTM3OTF9.4ciLIHsFYpXN6IL-B8QVSWzW-h_AeWtz9LZTzT3onVM"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "curso",
+                        "value": "65e4f8d3973eb35c20d51bde"
+                    },
+                    {
+                        "name": "students",
+                        "value": "65e4ec05ea8b3f1094db0367"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "276e59de-f0e0-4d26-9ff1-1b1bb4b8a14b",
+            "colId": "90dec943-1779-4d94-819b-39888bb431c9",
+            "containerId": "1520b830-9b98-455c-bd37-12381c355b2f",
+            "name": "Buscar cursos a los que esta asignado",
+            "url": "/assing/searchCourses",
+            "method": "POST",
+            "sortNum": 130000,
+            "created": "2024-03-03T22:36:12.557Z",
+            "modified": "2024-03-03T22:37:06.618Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU0ZWMwNWVhOGIzZjEwOTRkYjAzNjciLCJ1c2VybmFtZSI6ImFwZWRybyIsIm5hbWUiOiJBbnRvbnkiLCJyb2xlIjoiU1RVREVOVF9ST0xFIiwiaWF0IjoxNzA5NTA1NDA2LCJleHAiOjE3MDk1MTYyMDZ9.XADu0CUFCsclUPHcqO9rCkN5Ut02YPoV8EYBU8tjTQw"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "search",
+                        "value": "65e4ec05ea8b3f1094db0367"
+                    }
+                ]
+            },
+            "tests": []
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "localhost:2656"
+        }
+    }
+}
